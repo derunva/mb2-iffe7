@@ -1,0 +1,27 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+=breakpoint($point)
+  @if $point == exlarge
+    @media (min-width: 80rem)
+      @content
+  @if $point == desktop
+    @media (min-width: 70rem)
+      @content
+  @else if $point == laptop
+    @media (min-width: 64rem)
+      @content 
+  @else if $point == tablet 
+    @media (min-width: 50rem)
+      @content
+  @else if $point == phablet
+    @media (min-width: 37.5rem)
+      @content 
+@import 'grid';
+.placeholder
+  background: red
+  height: 200px
+.small-placeholder
+  @extend .placeholder 
+  height: 100px
